@@ -3,9 +3,9 @@ require "rails_helper"
 RSpec.describe 'the plot index' do
   before(:each) do
     @garden_1 = Garden.create!(name: 'Englewood Garden', organic: true)
-    @plot_1 = @garden_1.plots.create!(number: 10, size: 'Large', description: 'North')
-    @plot_2 = @garden_1.plots.create!(number: 20, size: 'Medium', description: 'South')
-    @plot_3 = @garden_1.plots.create!(number: 30, size: 'Small', description: 'East')
+    @plot_1 = @garden_1.plots.create!(number: 10, size: 'Large', direction: 'North')
+    @plot_2 = @garden_1.plots.create!(number: 30, size: 'Medium', direction: 'South')
+    @plot_3 = @garden_1.plots.create!(number: 20, size: 'Small', direction: 'East')
     @plant_1 = Plant.create!(name: 'Tomato', description: 'cherry', days_to_harvest: 90)
     @plant_2 = Plant.create!(name: 'Corn', description: 'sweet', days_to_harvest: 120)
     @plant_3 = Plant.create!(name: 'Squash', description: 'butternut', days_to_harvest: 100)
@@ -23,5 +23,13 @@ RSpec.describe 'the plot index' do
     @plot_3.plants << @plant_3
     @plot_3.plants << @plant_4
     @plot_3.plants << @plant_5
+  end
+
+  describe 'display' do
+    it 'lists all plots by number with the name of the plots plants below' do
+      visit plots_path
+
+
+    end
   end
 end
