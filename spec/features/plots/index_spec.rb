@@ -77,14 +77,12 @@ RSpec.describe 'the plot index' do
   describe 'hyperlinks' do
     it 'removes the plant from the plot and not other plots when delete button is clicked' do
       visit plots_path
-      save_and_open_page
 
       within("#plot-#{@plot_1.id}") do
         click_button("Delete #{@plant_3.name}")
       end
 
       expect(current_path).to eq(plots_path)
-      save_and_open_page
 
       within("#plot-#{@plot_1.id}") do
         expect(page).to_not have_content(@plant_3.name)
