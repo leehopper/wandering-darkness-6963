@@ -74,12 +74,13 @@ RSpec.describe 'the plot index' do
     end
   end
 
-  # describe 'hyperlinks' do
-  #   it 'removes the plant from the plot and not other plots when delete button is clicked' do
-  #     visit plots_path
-  #
-  #     within("#plot-#{@plot_1.id}") do
-  #     end
-  #   end
-  # end
+  describe 'hyperlinks' do
+    it 'removes the plant from the plot and not other plots when delete button is clicked' do
+      visit plots_path
+
+      within("#plot-#{@plot_1.id}") do
+        click_button("Delete #{@plant_3.name}")
+      end
+    end
+  end
 end
