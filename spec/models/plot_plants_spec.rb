@@ -14,7 +14,7 @@ RSpec.describe PlotPlant do
   end
 
   describe 'class methods' do
-    describe '.find_by_plant_and_plot_id' do
+    describe '#find_by_plant_and_plot_id' do
       it 'returns the plot plant id' do
         expect(PlotPlant.find_by_plant_and_plot_id(@plant_1.id, @plot_1.id).id).to eq(@plot_plant.id)
       end
