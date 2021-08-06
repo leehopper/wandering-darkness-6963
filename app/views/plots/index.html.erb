@@ -1,3 +1,9 @@
 <div id='header'>
   <h1>The Plot Index</h1>
 </div>
+
+<% @plots.each do |plot| %>
+  <div id="plot-<%= plot.id %>">
+    <h3>Plot Number: <%= plot.number %></h3>
+  </div>
+<% end %>
