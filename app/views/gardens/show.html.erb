@@ -1,3 +1,11 @@
 <div id='header'>
   <h1><%= @garden.name %> Plants</h1>
 </div>
+
+<div id='plants'>
+  <% @garden.sorted_plants.each.with_index do |plant, index| %>
+    <div id="plant-<%= plant.id %>">
+      <p><%= index + 1 %>. <%= plant.name %></p>
+    </div>
+  <% end %>
+</div>
