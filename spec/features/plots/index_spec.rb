@@ -8,9 +8,9 @@ RSpec.describe 'the plot index' do
     @plot_3 = @garden_1.plots.create!(number: 20, size: 'Small', direction: 'East')
     @plant_1 = Plant.create!(name: 'Tomato', description: 'cherry', days_to_harvest: 90)
     @plant_2 = Plant.create!(name: 'Corn', description: 'sweet', days_to_harvest: 120)
-    @plant_3 = Plant.create!(name: 'Squash', description: 'butternut', days_to_harvest: 100)
-    @plant_4 = Plant.create!(name: 'Lettuce', description: 'oak leaf', days_to_harvest: 20)
-    @plant_5 = Plant.create!(name: 'Rosemary', description: 'herb', days_to_harvest: 50)
+    @plant_3 = Plant.create!(name: 'Squash', description: 'butternut', days_to_harvest: 20)
+    @plant_4 = Plant.create!(name: 'Lettuce', description: 'oak leaf', days_to_harvest: 50)
+    @plant_5 = Plant.create!(name: 'Rosemary', description: 'herb', days_to_harvest: 100)
 
     @plot_1.plants << @plant_1
     @plot_1.plants << @plant_2
