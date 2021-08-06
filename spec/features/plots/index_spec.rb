@@ -29,7 +29,21 @@ RSpec.describe 'the plot index' do
     it 'lists all plots by number with the name of the plots plants below' do
       visit plots_path
 
+      within("#header") do
+        expect(page).to have_content("The Plot Index")
+      end
 
+      within("#plot-#{@plot_1.id}") do
+        expect(page).to have_content("Plot Number: #{@plot_1.number}")
+      end
+
+      within("#plot-#{@plot_2.id}") do
+        expect(page).to have_content("Plot Number: #{@plot_2.number}")
+      end
+
+      within("#plot-#{@plot_3.id}") do
+        expect(page).to have_content("Plot Number: #{@plot_3.number}")
+      end
     end
   end
 end
