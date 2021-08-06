@@ -35,14 +35,32 @@ RSpec.describe 'the plot index' do
 
       within("#plot-#{@plot_1.id}") do
         expect(page).to have_content("Plot Number: #{@plot_1.number}")
+        expect(page).to have_content(@plant_1.name)
+        expect(page).to have_content(@plant_2.name)
+        expect(page).to have_content(@plant_3.name)
+
+        expect(page).to_not have_content(@plant_4.name)
+        expect(page).to_not have_content(@plant_5.name)
       end
 
       within("#plot-#{@plot_2.id}") do
         expect(page).to have_content("Plot Number: #{@plot_2.number}")
+        expect(page).to have_content(@plant_2.name)
+        expect(page).to have_content(@plant_3.name)
+        expect(page).to have_content(@plant_4.name)
+
+        expect(page).to_not have_content(@plant_1.name)
+        expect(page).to_not have_content(@plant_5.name)
       end
 
       within("#plot-#{@plot_3.id}") do
         expect(page).to have_content("Plot Number: #{@plot_3.number}")
+        expect(page).to have_content(@plant_3.name)
+        expect(page).to have_content(@plant_4.name)
+        expect(page).to have_content(@plant_5.name)
+
+        expect(page).to_not have_content(@plant_1.name)
+        expect(page).to_not have_content(@plant_2.name)
       end
     end
   end
